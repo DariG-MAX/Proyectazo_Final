@@ -1,0 +1,21 @@
+table{ /*whdth:100%;*/
+}
+table,
+th,
+td{
+    border: 1px solid black;
+    text-align: center;
+}
+imput {
+    display: block;
+}
+section {
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.box {
+    display: inline-block; /* Para que la caja solo ocupe el ancho del texto */
+    background-color: white; /* Color de fondo para visualizar la caja */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier relleno */
+}

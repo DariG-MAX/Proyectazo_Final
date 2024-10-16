@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <section id="mainForm"> 
+        <h1 style="text-indent: 30px;">Bodega</strong></h1>
+        <label for="cantidad10">Ingrese cantidad de billetes de 10$:</label>  
+        <input type="number" id="cantidad10" placeholder="Cantidad de billetes" min="0" required>  
+        <br>
+        <label for="cantidad20">Ingrese cantidad de billetes de 20$:</label>  
+        <input type="number" id="cantidad20" placeholder="Cantidad de billetes"min="0" required>  
+        <br>
+        <label for="cantidad50">Ingrese cantidad de billetes de 50$:</label>  
+        <input type="number" id="cantidad50" placeholder="Cantidad de billetes"min="0" required>  
+        <button id="guardarBtn">Guardar</button>
+        <br>
+        <p class="box" style="margin: 20px;" id="mainForm_inicial">
+            Cantidad inicial:
+            <br>10$: <span id="mainForm_cB10"></span> Billetes
+            <br>20$: <span id="mainForm_cB20"></span> Billetes
+            <br>50$: <span id="mainForm_cB50"></span> Billetes
+            <br><br>
+        
+        </p>
+        <section id="mainForm_2" style="display: none;">
+        <table id="mainForm_tabla">
+            <br>
+            <tr>
+                <th>Cedula</th>
+                <th>Denominacion</th>
+                <th>Cantidad</th>
+                <th>Monto Cuenta</th>
+            </tr>
+        </table>
+        <ul id="mainForm_final">
+            <li><h4>Monto final de billetes de $10: <span id="mainForm_b10">?</span>$</h4></li>
+            <li><h4>Monto final de billetes de $20: <span id="mainForm_b20">?</span>$</h4></li>
+            <li><h4>Monto final de billetes de $50: <span id="mainForm_b50">?</span>$</h4></li>
+            <li><h4>Al bodeguero le queda un monto total de: <span id="mainForm_montT">?</span>$</h4></li>
+        <br>
+        </ul>
+        </section>
+        <br>
+        <button id="mainForm_agregarCliente">Agregar Cliente</button>
+        <br><br>
+    </section>
+    <section id="clienteForm">
+        <h3>Datos Cliente</h3>
+        <input type="text" id="clienteForm_inCedula" placeholder="Cedula"></input> <br>
+        <input type="text" id="clienteForm_inDenominacion" placeholder="Denominacion"></input><br>
+        <input type="text" id="clienteForm_inCantidad" placeholder="Cantidad"></input><br>
+        <br>
+        <br>
+        <button id="clienteForm_btAceptar">Aceptar</button>
+        <br>
+        <br>
+    
+    </section>
+</body>
+<script type="module">
+    import Cl_controlador from "./Cl_controlador.js";
+    new Cl_controlador()
+     // Agregar evento click al botón de aceptar del cliente
+    document.getElementById('clienteForm_btAceptar').addEventListener('click',  () => {
+            // Ocultar el mensaje del mainForm_inicial
+            document.getElementById('mainForm_inicial').style.display = 'none';
+            // Mostrar resultados finales mainForm_final
+            document.getElementById('mainForm_2').style.display = 'block';
+    });
+</script>
+</html>
